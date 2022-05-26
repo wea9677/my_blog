@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connect = () => {
-    mongoose.connect("mongodb://0.0.0.0:27017/article_database").catch((err) =>{
+    mongoose.connect("mongodb+srv://wea9677:<password>@cluster0.xmzro.mongodb.net/?retryWrites=true&w=majority").catch((err) =>{
         console.error(err);
   
 
