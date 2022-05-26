@@ -35,7 +35,8 @@ router.get("/article/:articleId", async (req, res) => {
 router.delete("/article/:articleId", async (req, res) => {
     const {articleId} = req.params;
     
-    const removearticle = await Article.find({articleId : Number(articleId)});
+    const removearticle = await Article.find({articleId : Number(articleId)}); //비밀번호를 비교하는 법을 찾지 못했습니다. ㅠㅠ
+                                                                               // 그리고 Thunder client 에서 비밀번호 값을 어떻게 비교 해서 검사를 하는지 방법도 잘 모르겠어요 ㅠㅠ
     if (removearticle.length > 0) {
       await Article.deleteOne({articleId: Number(articleId)});
     }
