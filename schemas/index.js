@@ -6,7 +6,7 @@ const connect = () => {
   
 
  // EC2 ubuntu 의 경우
-        mongoose.connect("mongodb://54.180.113.144:27017article_database",
+        mongoose.connect("mongodb://54.180.113.144:27017/article_database",
             { ignoreUndefined: true }).catch((err) => {
         console.error(err)
     
