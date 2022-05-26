@@ -1,9 +1,17 @@
 const mongoose = require("mongoose");
 
 const connect = () => {
-    mongoose.connect("mongodb://0.0.0.0:27017/article_database").catch((err) =>{
-        console.error(err);
+    // mongoose.connect("mongodb://0.0.0.0:27017/article_database").catch((err) =>{
+    //     console.error(err);
+  
+
+ // EC2 ubuntu 의 경우
+        mongoose.connect("mongodb://54.180.113.144:27017article_database",
+            { ignoreUndefined: true }).catch((err) => {
+        console.error(err)
+    
     }); 
+
 };
 
 module.exports = connect;
