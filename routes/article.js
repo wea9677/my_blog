@@ -64,16 +64,16 @@ router.delete("/article/:articleId", async (req, res) => {
 //기록하기
 
 router.post("/article", async (req, res) => {
-    const { articleId, name, articlePw, date, title, content } = req.body;
-
-    const article = await Article.find({ articleId });
-    if (article.length) {
-        return res
-        .status(400)
-        .json({ success: false, errorMessage: "이미 있는 데이터입니다." });
-    }
-
-    const createdArticle = await Article.create({ articleId, name, articlePw, date, title, content });
+    const { name, articlePw, title, content } = req.body;
+    console.log(req.body);
+    // const article = await Article.find({ articleId });
+    // if (article.length) {
+    //     return res
+    //     .status(400)
+    //     .json({ success: false, errorMessage: "이미 있는 데이터입니다." });
+    // }
+    
+    const createdArticle = await Article.create({name, articlePw, title, content });
 
 
     res.json({ article: createdArticle });
